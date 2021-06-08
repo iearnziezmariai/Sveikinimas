@@ -86,7 +86,7 @@
             audio_files = ["1", "2", "3", "4"];
             random = Math.floor(Math.random() * audio_files.length);
 
-            var audio = new Audio("/Audio/" + audio_files[random] + ".wav");
+            var audio = new Audio("Audio/" + audio_files[random] + ".wav");
             var playPromise = audio.play(); 
 
             if (playPromise !== undefined) {
