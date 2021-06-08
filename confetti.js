@@ -47,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function() {
   var speed = 50,
       duration = (1.0 / speed),
       confettiRibbonCount = 11,
-      ribbonPaperCount = 65,
+      ribbonPaperCount = 30,
       ribbonPaperDist = 8.0,
       ribbonPaperThick = 8.0,
-      confettiPaperCount = 200,
+      confettiPaperCount = 100,
       DEG_TO_RAD = PI / 180,
       RAD_TO_DEG = 180 / PI,
       colors = [
