@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
     this.angle = DEG_TO_RAD * random() * 360;
     this.rotation = DEG_TO_RAD * random() * 360;
     this.cosA = 1.0;
-    this.size = 7.0;
+    this.size = 5.0;
     this.oscillationSpeed = (random() * 1.5 + 0.5);
     this.xSpeed = 40.0;
     this.ySpeed = (random() * 60 + 50.0);
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
       this.pos.x += cos(this.time * this.oscillationSpeed) * this.xSpeed * _dt
       this.pos.y += this.ySpeed * _dt;
       if (this.pos.y > ConfettiPaper.bounds.y) {
-        this.pos.x = random() * ConfettiPaper.bounds.x;
+        this.pos.x = Math.random() * ConfettiPaper.bounds.x;
         this.pos.y = 0;
       }
     }
@@ -212,17 +212,17 @@ document.addEventListener("DOMContentLoaded", function() {
     this.particleMass = _mass;
     this.particleDrag = _drag;
     this.particles = new Array();
-    var ci = round(random() * (colors.length - 1));
+    var ci = round(Math.random() * (colors.length - 1));
     this.frontColor = colors[ci][0];
     this.backColor = colors[ci][1];
     this.xOff = (cos(DEG_TO_RAD * _angle) * _thickness);
     this.yOff = (sin(DEG_TO_RAD * _angle) * _thickness);
     this.position = new Vector2(_x, _y);
     this.prevPosition = new Vector2(_x, _y);
-    this.velocityInherit = (random() * 2 + 4);
-    this.time = random() * 100;
-    this.oscillationSpeed = (random() * 2 + 2);
-    this.oscillationDistance = (random() * 40 + 40);
+    this.velocityInherit = (Math.random() * 2 + 4);
+    this.time = Math.random() * 100;
+    this.oscillationSpeed = (Math.random() * 2 + 2);
+    this.oscillationDistance = (Math.random() * 40 + 40);
     this.ySpeed = (random() * 40 + 80);
     for (var i = 0; i < this.particleCount; i++) {
       this.particles[i] = new EulerMass(_x, _y - i * this.particleDist, this.particleMass, this.particleDrag);
@@ -259,15 +259,15 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
     this.Reset = function() {
-      this.position.y = -random() * ConfettiRibbon.bounds.y;
-      this.position.x = random() * ConfettiRibbon.bounds.x;
+      this.position.y = -Math.random() * ConfettiRibbon.bounds.y;
+      this.position.x = Math.random() * ConfettiRibbon.bounds.x;
       this.prevPosition = new Vector2(this.position.x, this.position.y);
-      this.velocityInherit = random() * 2 + 4;
-      this.time = random() * 100;
-      this.oscillationSpeed = random() * 2.0 + 1.5;
-      this.oscillationDistance = (random() * 40 + 40);
-      this.ySpeed = random() * 40 + 80;
-      var ci = round(random() * (colors.length - 1));
+      this.velocityInherit = Math.random() * 2 + 4;
+      this.time = Math.random() * 100;
+      this.oscillationSpeed = Math.random() * 2.0 + 1.5;
+      this.oscillationDistance = (Math.random() * 40 + 40);
+      this.ySpeed = Math.random() * 40 + 80;
+      var ci = round(Math.random() * (colors.length - 1));
       this.frontColor = colors[ci][0];
       this.backColor = colors[ci][1];
       this.particles = new Array();
@@ -347,12 +347,12 @@ document.addEventListener("DOMContentLoaded", function() {
     var confettiRibbons = new Array();
     ConfettiRibbon.bounds = new Vector2(canvasWidth, canvasHeight);
     for (i = 0; i < confettiRibbonCount; i++) {
-      confettiRibbons[i] = new ConfettiRibbon(random() * canvasWidth, -random() * canvasHeight * 2, ribbonPaperCount, ribbonPaperDist, ribbonPaperThick, 45, 1, 0.05);
+      confettiRibbons[i] = new ConfettiRibbon(Math.random() * canvasWidth, -Math.random() * canvasHeight * 2, ribbonPaperCount, ribbonPaperDist, ribbonPaperThick, 45, 1, 0.05);
     }
     var confettiPapers = new Array();
     ConfettiPaper.bounds = new Vector2(canvasWidth, canvasHeight);
     for (i = 0; i < confettiPaperCount; i++) {
-      confettiPapers[i] = new ConfettiPaper(random() * canvasWidth, random() * canvasHeight);
+      confettiPapers[i] = new ConfettiPaper(Math.random() * canvasWidth, Math.random() * canvasHeight);
     }
     this.resize = function() {
       canvasWidth = canvasParent.offsetWidth;
