@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var speed = 50,
       duration = (1.0 / speed),
       confettiRibbonCount = 11,
-      ribbonPaperCount = 65,
+      ribbonPaperCount = 35,
       ribbonPaperDist = 8.0,
       ribbonPaperThick = 8.0,
       confettiPaperCount = 200,
